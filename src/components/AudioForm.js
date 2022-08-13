@@ -6,7 +6,7 @@ function AudioForm(props) {
     }
 
     return (
-        <form className="audio-form">
+        <form className="audio-form" onSubmit={props.submit}>
             <div id="dropzone"
                 onDragEnter={(e) => preventDefaults(e)}
                 onDragOver={(e) => preventDefaults(e)}
@@ -22,11 +22,12 @@ function AudioForm(props) {
                     onChange={props.handleChange}></input>
                 <audio
                     controls
-                    src={props.audioFile ? URL.createObjectURL(props.audioFile) : null}
+                    src={props.audioFile ? props.audioUrl : null}
                 >
                 </audio>
             </div>
-            <button type="submit" onSubmit={props.submit}>Next</button>
+            <p>{props.audioFile ? props.audioFile.name : null}</p>
+            <button type="submit">Next</button>
         </form>
     )
 }
