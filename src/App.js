@@ -1,5 +1,5 @@
-import AudioForm from './components/AudioForm';
-import Canvas from './components/canvas/Canvas'
+import AudioForm from './components/AudioForm.js';
+import Canvas from './components/canvas/Canvas.js'
 import './App.css';
 import { useState } from 'react';
 
