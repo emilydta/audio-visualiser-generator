@@ -42,6 +42,7 @@ function App() {
       {editorOpen && audioFile ?
         <Canvas
           audioUrl={audioUrl}
+          audioFile={audioFile}
         /> : null}
     </div>
   );

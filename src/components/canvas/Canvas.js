@@ -1,9 +1,11 @@
 import { useEffect, useRef } from "react";
+import DownloadCanvas from "./DownloadCanvas";
 
 function Canvas(props) {
     let canvasRef = useRef();
     let audio = new Audio();
     audio.src = props.audioUrl
+    
 
     useEffect(() => {
         canvasRef = canvasRef.current;
@@ -37,7 +39,9 @@ function Canvas(props) {
             requestAnimationFrame(animate)
         }
         animate();
-    }, [])
+    })
+
+    
 
     return (
         <div>
@@ -49,6 +53,9 @@ function Canvas(props) {
                 width="960px"
                 height="540px">
             </canvas>
+            <DownloadCanvas canvasRef={canvasRef}
+                audioFile={props.audioFile}
+            />
         </div>
     )
 }

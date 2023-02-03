@@ -10,3 +10,8 @@
   width: 500px;
   
 }
+
+#canvas {
+  border: 1px black solid;
+  background-color: black;
+}
